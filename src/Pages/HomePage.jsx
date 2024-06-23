@@ -13,23 +13,28 @@ const HomePage = () => {
             {/* carousal start */}
             <div className="h-svh w-full relative overflow-hidden">
   <div className="carousel carousel-horizontal w-full h-full flex">
+   <div className="carousel-item relative h-full w-96">
+  <div className="absolute inset-0 bg-black opacity-50"></div>
+  <h1 className="absolute top-64 left-4 transform -translate-y-1/2 text-white text-4xl font-sans z-10">
+    Discover <span className='font-bold text-gray-390'>Cafe Oregano</span>: Where Flavor Comes First !
+  </h1>
+  <img className="object-cover h-full w-full" src={"https://res.cloudinary.com/dlcnf8yfh/image/upload/v1719152374/pexels-ron-lach-8879358_axjcby.jpg"} alt="Carousel 2" />
+</div>
+
     <div className="carousel-item relative h-full w-96">
-      <h1 className="absolute top-64 left-4 transform -translate-y-1/2 text-white text-4xl font-sans">
-        Discover <span className='font-bold text-gray-390'>Cafe Oregano</span>: Where Flavor Comes First !
-      </h1>
-      <img className="object-cover h-full w-full" src={"https://res.cloudinary.com/dlcnf8yfh/image/upload/v1719148396/Carousal1_lyyvk0.jpg"} alt="Carousel 1" />
-    </div>
-    <div className="carousel-item relative h-full w-96">
-      <h1 className="absolute top-64 left-8 transform -translate-y-1/2 text-white text-4xl">
+    <div className="absolute inset-0 bg-black opacity-50"></div>
+      <h1 className="absolute top-96 left-8 transform -translate-y-1/2 text-white text-4xl">
         Where Every Bite Tells a Story :)
       </h1>
-      <img className="object-cover h-full w-full" src={"https://res.cloudinary.com/dlcnf8yfh/image/upload/v1719148396/Carousal2_elrcgh.jpg"} alt="Carousel 2" />
+      <img className="object-cover h-full w-full" src={"https://res.cloudinary.com/dlcnf8yfh/image/upload/v1719152374/pexels-andreevaleksandar-20854971_l8iqsl.jpg"} alt="Carousel 1" />
+
     </div>
     <div className="carousel-item relative h-full w-96">
+        <div className='absolute inset-0 bg-black opacity-50'></div>
       <h1 className="absolute top-64 left-4 transform -translate-y-1/2 text-white text-4xl">
         Discover Delights: Cafe Oregano Edition
       </h1>
-      <img className="object-cover h-full w-full" src={"https://res.cloudinary.com/dlcnf8yfh/image/upload/v1719148396/Carousal4_sh3ycn.jpg"} alt="Carousel 3" />
+      <img className="object-cover h-full w-full" src={"https://res.cloudinary.com/dlcnf8yfh/image/upload/v1719155876/Production_photo_for_meat_restaurant_surlcf.jpg"} alt="Carousel 3" />
     </div>
   </div>
   <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
@@ -47,32 +52,41 @@ const HomePage = () => {
                     Most popular
                 </h1>
                 <div className='px-2'>
-                    <div>
-                        <div className="m w-full relative">
-                            <Link to="/listPage/combo">
-                                <figure> <img className="rounded-t-xl" src={comboBan} alt="shakes" /> </figure>
-                                <div className='absolute inset-0 rounded-t-xl bg-black opacity-40 flex items-center justify-center'>
-                                    <h1 className='text-white p-2 text-3xl font-extrabold font-sans'>Combo</h1>
-                                </div>
-                            </Link>
-                        </div>
-                    </div>
+             
+                    <div className="w-full relative">
+  <Link to="/listPage/combo">
+    <figure className="relative">
+      <img className="rounded-t-xl" src={comboBan} alt="shakes" />
+      <div className="absolute inset-0 rounded-t-xl flex items-center justify-center">
+        <h1 className="text-white p-2 text-3xl font-extrabold font-sans">Combo</h1>
+      </div>
+      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray-900 to-transparent"></div>
+    </figure>
+  </Link>
+</div>
+
+                
                     <div className='flex '>
-                        <div className="m-1 w-full relative ">
+                        <div className="mt-1  w-full relative ">
                             <Link to={"/listPage"}>
-                                <figure> <img className='rounded-md h-48 w-full' src={oreganoSpecial} alt="shakes" /> </figure>
-                                <div className='absolute inset-0 rounded-md flex items-center opacity-70 justify-center bg-black bg-opacity-40'>
+                                <figure className='relative '> <img className=' h-48 w-full' src={oreganoSpecial} alt="shakes" /> 
+                                <div className='absolute inset-0 rounded-md flex items-center justify-center'>
                                     <h1 className='text-white font-bold p-2 text-xl font-sans'>oregano Special</h1>
                                 </div>
+                                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                                </figure>
                             </Link>
                         </div>
 
-                        <div className="m-1 w-full relative ">
+                        <div className="mt-1 ml-1 w-full  relative ">
                             <Link to={'/listPage/starter'}>
-                                <figure> <img className='rounded-md h-48  w-full' src={starter} alt="shakes" /> </figure>
-                                <div className='absolute inset-0 rounded-md flex items-center opacity-55 justify-center bg-black bg-opacity-50'>
+                                <figure className='relative'> 
+                                    <img className='rounded-b-xl h-48  w-full' src={starter} alt="shakes" /> 
+                                <div className='absolute inset-0  flex items-center justify-center '>
                                     <h1 className='text-white font-bold p-2 text-xl font-sans'>Starter</h1>
                                 </div>
+                                <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-gray-800 to-transparent"></div>
+                                </figure>
                             </Link>
                         </div>
                     </div>
