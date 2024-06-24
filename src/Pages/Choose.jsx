@@ -3,12 +3,13 @@ import shakes from '/shake.jpg'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 import { Link } from 'react-router-dom'
+import Navbar2 from '../Components/Navbar2'
 
 const Choose = () => {
 
     return (
         <>
-        <Navbar/>
+        <Navbar2/>
             <div className='container p-2 font-bold'>
                 <h1 className='text-black py-4'>
                    category name

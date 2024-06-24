@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .container input {
+    display: none;
+  }
+  
+  .container svg {
+    cursor: pointer;
+    fill: currentColor; /* Adjust the fill color as needed */
+  }
+  
+  .container input:checked + svg {
+    fill: white; /* Change color when checked */
+  }
+  

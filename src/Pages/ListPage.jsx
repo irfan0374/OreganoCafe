@@ -1,21 +1,35 @@
-import React, { useContext, useMemo } from 'react'
+import React, { useContext, useEffect, useMemo } from 'react'
 import shakes from '/shake.jpg'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 import { Link, useParams } from 'react-router-dom'
 import { MenuContext } from '../MenuContext'
+import Navbar2 from '../Components/Navbar2'
+import Addon from '../Components/Addon'
 
 
 
 
 const ListPage = () => {
+
+
+
   const {category}=useParams()
-  const {menu}=useContext(MenuContext)
-   // Debugging logs to check values
-   console.log("Category:", category);
-   console.log("Menu:", menu);
-  
-  
+  const {menu, favorites,addToFavorites,removeFromFavorites}=useContext(MenuContext)
+
+
+  const handleFavorites=(item)=>{
+    if(isFavorite(item)){
+      removeFromFavorites(item)
+    }else{
+      addToFavorites(item)
+    }
+  }
+
+  const isFavorite = (item) => {
+    return favorites.some((fav) => fav.id === item.id);
+};
+
   const filterMenu = useMemo(() => { 
 
     return menu.filter(item => {
@@ -28,22 +42,50 @@ const ListPage = () => {
 
   const title=category? `${category.charAt(0).toUpperCase() + category.slice(1)} Menu` :"Oregano Special";
 
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [category]);
+
+
     return (
         <>
-        <Navbar/>
+        <Navbar2/>
             <div className='container p-2 font-bold'>
              
                 <h1 className='my-2 font-serif text-xl' >{title}</h1>
       
                 <div className='grid grid-cols-2 gap-3 '>
                     {filterMenu.length>0?(
-                        filterMenu.map(item=>(
-                          <div className=' h-60  '>
+                        filterMenu.map((item,index)=>(
+                          <div className=' h-full' key={index}>
                           <img className="w-full h-40 object-cover rounded-b-md" src={item.image[0]?item.image[0]:"https://res.cloudinary.com/dlcnf8yfh/image/upload/v1719145461/Oops_sjrnl5.png"} alt="" />
                           <div className='flex-none '>
 
-                          <div className='text-gray-800 text-sm  font-serif '>
+                          <div className=' flex justify-between text-gray-800 text-sm  font-serif '>
                              {item.name}
+                             <div>
+                                    <label className="ui-bookmark">
+                                        <input type="checkbox"  
+                                        checked={isFavorite(item)}
+                                            onChange={() => handleFavorites(item)} />
+                                        <div className="bookmark">
+                                            <svg
+                                                viewBox="0 0 16 16"
+                                                style={{ marginTop: '4px' }}
+                                                className="bi bi-heart-fill"
+                                                height="25"
+                                                width="25"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"
+                                                    fillRule="evenodd"
+                                                ></path>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                </div>
                           </div>
                           <div className="   text-black text-end text-sm">
                               ₹{item.price}</div>
@@ -60,6 +102,7 @@ const ListPage = () => {
                     ):(<p>no item found for this category</p>)}
                 </div>
             </div>
+            <Addon/>
           <Footer/>
         </>
     )

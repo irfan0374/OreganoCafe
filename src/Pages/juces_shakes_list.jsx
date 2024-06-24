@@ -4,6 +4,7 @@ import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 import { Link, useParams } from 'react-router-dom'
 import { MenuContext } from '../MenuContext'
+import Navbar2 from '../Components/Navbar2'
 
 
 
@@ -24,7 +25,7 @@ const juiceShakeList = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar2 />
       <div className='container p-2 font-bold'>
       <h2 className="text-lg font-semibold mb-2">Pick Your Favorite Beverage:</h2>
         {/* category option */}

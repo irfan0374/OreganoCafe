@@ -1,5 +1,4 @@
 import React, { useMemo, useState } from 'react';
-import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import {
   Drawer,
@@ -8,6 +7,7 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { useLocation } from 'react-router-dom';
+import Navbar2 from '../Components/Navbar2';
 
 const DetailPage = () => {
   const location = useLocation();
@@ -25,7 +25,7 @@ const DetailPage = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar2 />
       <div className='container mx-auto p-4 '>
         {/* Carousel */}
         <div className="carousel w-full h-80 rounded-md overflow-hidden">

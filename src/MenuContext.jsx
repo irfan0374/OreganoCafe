@@ -3,6 +3,23 @@ import React,{ Children, createContext,useState}from 'react'
 export const MenuContext=createContext()
 
 const MenuProvider = ({children}) => {
+
+  // add to wishlist
+  const [favorites, setFavorites] = useState([]);
+
+const addToFavorites=(item)=>{
+  setFavorites((prevFav)=>[...prevFav,item])
+  localStorage.setItem('favorite',JSON.stringify([...favorites,item]))
+}
+
+// remove from wishlist
+const removeFromFavorites=(item)=>{
+  const updateFav=favorites.filter((fav)=>fav.id!==item.id)
+  setFavorites(updateFav)
+  localStorage.setItem('favorite',JSON.stringify(updateFav))
+}
+
+
   const [menu,setMenu]=useState([
     {
       id: 1,
@@ -1047,7 +1064,7 @@ const MenuProvider = ({children}) => {
     
   ])
   return (
-  <MenuContext.Provider value={{menu,setMenu}}>
+  <MenuContext.Provider value={{menu,addToFavorites,removeFromFavorites,favorites}}>
     {children}
   </MenuContext.Provider>
   )

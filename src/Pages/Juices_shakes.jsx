@@ -8,6 +8,7 @@ import Footer from '../Components/Footer'
 import Navbar from '../Components/Navbar'
 import { Link } from 'react-router-dom'
 import { MenuContext } from '../MenuContext'
+import Navbar2 from '../Components/Navbar2'
 
 
 
@@ -24,7 +25,7 @@ const Juices_shakes = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar2 />
       {/* types card start */}
       {Loading ? (
         <p>loading</p>
