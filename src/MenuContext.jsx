@@ -1071,7 +1071,7 @@ const removeFromFavorites=(item)=>{
     
   ])
   return (
-  <MenuContext.Provider value={{menu,setMenu,addToFavorites,removeFromFavorites,favorites}}>
+  <MenuContext.Provider value={{menu,setMenu,addToFavorites,removeFromFavorites,favorites,setFavorites}}>
     {children}
   </MenuContext.Provider>
   )

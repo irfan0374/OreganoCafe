@@ -4,17 +4,18 @@ import Navbar2 from './Navbar2';
 import { MenuContext } from '../MenuContext';
 
 const Wishlist = () => {
-    const { favorites, removeFromFavorites } = useContext(MenuContext);
-    const [favorite, setFavorites] = useState([]);
+    const { favorites,setFavorites, removeFromFavorites } = useContext(MenuContext);
+    const [favorite, setFav] = useState([]);
 
     useEffect(() => {
-        setFavorites(favorites);
+        setFav(favorites);
     }, [favorite]);
 
 
     const clearAllFavorites = () => {
-        setFavorites([]);
         localStorage.removeItem('favorite');
+        setFavorites([]);
+        setFav([])
     };
 
     return (

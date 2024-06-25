@@ -5,7 +5,7 @@ import Juices_shakes from "../Pages/Juices_shakes"
 import ListPage from "../Pages/ListPage"
 import DetailPage from "../Pages/DetailPage"
 import JuiceShakeList from "../Pages/juces_shakes_list"
-import Wishlist from "../Components/wishlist"
+import Wishlist from "../Components/Wishlist"
 
 
 
