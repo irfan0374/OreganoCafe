@@ -1,4 +1,4 @@
-import React,{ Children, createContext,useState}from 'react'
+import React,{ Children, createContext,useEffect,useState}from 'react'
 
 export const MenuContext=createContext()
 
@@ -6,6 +6,13 @@ const MenuProvider = ({children}) => {
 
   // add to wishlist
   const [favorites, setFavorites] = useState([]);
+
+  useEffect(() => {
+    const savedFavorites = localStorage.getItem('favorite');
+    if (savedFavorites) {
+        setFavorites(JSON.parse(savedFavorites));
+    }
+}, []);
 
 const addToFavorites=(item)=>{
   setFavorites((prevFav)=>[...prevFav,item])
@@ -1064,7 +1071,7 @@ const removeFromFavorites=(item)=>{
     
   ])
   return (
-  <MenuContext.Provider value={{menu,addToFavorites,removeFromFavorites,favorites}}>
+  <MenuContext.Provider value={{menu,setMenu,addToFavorites,removeFromFavorites,favorites}}>
     {children}
   </MenuContext.Provider>
   )

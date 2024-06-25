@@ -9,7 +9,21 @@ import {
 import { MenuContext } from "../MenuContext"; // Import the MenuContext
 
 const Addon = () => {
-    const { menu } = useContext(MenuContext); // Get the menu from the context
+    const {menu, favorites,addToFavorites,removeFromFavorites}=useContext(MenuContext)
+
+
+    const handleFavorites=(item)=>{
+      if(isFavorite(item)){
+        removeFromFavorites(item)
+      }else{
+        addToFavorites(item)
+      }
+    }
+  
+    const isFavorite = (item) => {
+      return favorites.some((fav) => fav.id === item.id);
+  };
+  
 
     const memoObj = useMemo(() => {
         return menu.filter(item => item?.category === "addon");
@@ -70,7 +84,9 @@ const Addon = () => {
                                 </div>
                                 <div>
                                     <label className="ui-bookmark">
-                                        <input type="checkbox" />
+                                    <input type="checkbox"  
+                                        checked={isFavorite(item)}
+                                            onChange={() => handleFavorites(item)} />
                                         <div className="bookmark">
                                             <svg
                                                 viewBox="0 0 16 16"

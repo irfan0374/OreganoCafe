@@ -13,7 +13,20 @@ import Navbar2 from '../Components/Navbar2'
 
 
 const Juices_shakes = () => {
-  const {menu}=useContext(MenuContext)
+  const {menu, favorites,addToFavorites,removeFromFavorites}=useContext(MenuContext)
+
+
+  const handleFavorites=(item)=>{
+    if(isFavorite(item)){
+      removeFromFavorites(item)
+    }else{
+      addToFavorites(item)
+    }
+  }
+
+  const isFavorite = (item) => {
+    return favorites.some((fav) => fav.id === item.id);
+};
   
   const memoObj=useMemo(()=>{
     const filterMenu=menu.filter(item=>item?.oreganoSp==="yes"&& item?.type=="drink")
@@ -57,7 +70,7 @@ const Juices_shakes = () => {
       {/* types card end */}
 
       {/* oregano special start */}
-      <div className='container p-2 font-bold'>
+      <div className=' p-2 font-bold'>
         <h1 className='text-black text-xl my-3 font-serif'>
           Oregano Special
         </h1>
@@ -70,6 +83,26 @@ const Juices_shakes = () => {
 
                           <div className=' py-1 text-gray-800 text-sm font-bold font-serif '>
                              {item.name}
+                             <label className="ui-bookmark">
+                                        <input type="checkbox"  
+                                        checked={isFavorite(item)}
+                                            onChange={() => handleFavorites(item)} />
+                                        <div className="bookmark">
+                                            <svg
+                                                viewBox="0 0 16 16"
+                                                style={{ marginTop: '4px' }}
+                                                className="bi bi-heart-fill"
+                                                height="25"
+                                                width="25"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"
+                                                    fillRule="evenodd"
+                                                ></path>
+                                            </svg>
+                                        </div>
+                                    </label>
                           </div>
                           <div className=" py-1 text-black text-end text-sm">
                               ₹{item.price}</div>

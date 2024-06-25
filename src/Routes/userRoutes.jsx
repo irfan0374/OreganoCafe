@@ -5,6 +5,7 @@ import Juices_shakes from "../Pages/Juices_shakes"
 import ListPage from "../Pages/ListPage"
 import DetailPage from "../Pages/DetailPage"
 import JuiceShakeList from "../Pages/juces_shakes_list"
+import Wishlist from "../Components/Wishlist"
 
 
 const userRoutes=()=>{
@@ -15,6 +16,7 @@ const userRoutes=()=>{
             <Route path="/juice" element={<Juices_shakes/>}/>
             <Route path="/listPage/:category?" element={<ListPage/>}/>
             <Route path="/DetailPage" element={<DetailPage/>}/>
+            <Route path="/wishlist" element={<Wishlist/>}/>
             <Route path="/juiceShakeList/:category" element={<JuiceShakeList/>}/>
 
         </Routes>
