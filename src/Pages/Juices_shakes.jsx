@@ -1,21 +1,13 @@
 import React, { useContext,useEffect, useMemo, useState } from 'react'
-import { motion } from "framer-motion"
-
 import shakes from '/shake.jpg'
 import juice from '/juice.jpg'
-import { Button } from '@material-tailwind/react'
 import Footer from '../Components/Footer'
-import Navbar from '../Components/Navbar'
 import { Link } from 'react-router-dom'
 import { MenuContext } from '../MenuContext'
 import Navbar2 from '../Components/Navbar2'
 
-
-
 const Juices_shakes = () => {
   const {menu, favorites,addToFavorites,removeFromFavorites}=useContext(MenuContext)
-
-
   const handleFavorites=(item)=>{
     if(isFavorite(item)){
       removeFromFavorites(item)
@@ -23,7 +15,6 @@ const Juices_shakes = () => {
       addToFavorites(item)
     }
   }
-
   const isFavorite = (item) => {
     return favorites.some((fav) => fav.id === item.id);
 };
@@ -33,7 +24,12 @@ const Juices_shakes = () => {
     return filterMenu
 
   },[])
-  const [juiceData, Setjuices] = useState([])
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
+  
+
   const [Loading, setLoading] = useState(false)
 
   return (

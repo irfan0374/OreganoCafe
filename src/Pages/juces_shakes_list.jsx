@@ -1,4 +1,4 @@
-import React, { useContext, useMemo, useState } from 'react'
+import React, { useContext, useEffect, useMemo, useState } from 'react'
 import shakes from '/shake.jpg'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
@@ -23,10 +23,14 @@ const juiceShakeList = () => {
     return filterobj
   },[category,type])
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [category]);
+
   return (
     <>
       <Navbar2 />
-      <div className='container p-2 font-bold'>
+      <div className=' p-2 font-bold'>
       <h2 className="text-lg font-semibold mb-2">Pick Your Favorite Beverage:</h2>
         {/* category option */}
         <div

@@ -27,7 +27,7 @@ const Navbar2 = () => {
           </details>
         </li>
         <li className='text-base-200 text-lg font-mono'> <Link to={'/wishlist'}>
-        <label className="container h-18 w-8">
+        <label className="container h-5 w-8">
       <input type="checkbox"  checked />
       <svg
         id="Layer_1"
