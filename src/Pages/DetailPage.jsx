@@ -27,20 +27,23 @@ const DetailPage = () => {
   return (
     <>
       <Navbar2 />
-      <div className=' mx-auto p-4 '>
+      <div className=' mx-auto p-4'>
         {/* Carousel */}
-        <div className="carousel w-full h-80 rounded-md overflow-hidden">
+        <div className='border border-gray-600 p-2 rounded-lg '>
+
+        <div className="carousel w-full h-80 rounded-lg overflow-hidden  shadow-lg  ">
           {memoObj?.image.map((imgSrc, index) => (
             <div key={index} className={`carousel-item w-full ${index === currentImageIndex ? 'block' : 'hidden'}`}>
-              <img src={imgSrc} className="w-full h-full object-cover" alt={`Carousel ${index}`} />
+              <img src={imgSrc} className="w-full h-full object-cover shadow " alt={`Carousel ${index}`} />
             </div>
           ))}
         </div>
+          </div>
         <div className='flex gap-2 justify-center py-2'>
           {memoObj?.image.map((imgSrc, index) => (
             <img
               key={index}
-              className={`w-20 h-20 object-cover rounded-md cursor-pointer ${index === currentImageIndex ? 'border-2 border-blue-500' : ''}`}
+              className={`w-20 h-20 object-cover rounded-md cursor-pointer shadow-md ${index === currentImageIndex ? 'border-2 border-blue-500' : ''}`}
               src={imgSrc}
               alt={`Thumbnail ${index}`}
               onClick={() => {

@@ -50,9 +50,12 @@ const ListPage = () => {
         <div className='grid grid-cols-2 gap-3'>
           {filterMenu.length > 0 ? (
             filterMenu.map((item, index) => (
-              <div className='h-full shadow-lg rounded-lg p-2' key={index}>
-                <img className="w-full h-40 object-cover rounded-md" src={item.image[0] ? item.image[0] : "https://res.cloudinary.com/dlcnf8yfh/image/upload/v1719145461/Oops_sjrnl5.png"} alt="" />
+      
+
+              <div className='h-full rounded-lg shadow-md p-4' key={index}>
+                <img className="w-full h-40 object-cover rounded-md " src={item.image[0] ? item.image[0] : "https://res.cloudinary.com/dlcnf8yfh/image/upload/v1719145461/Oops_sjrnl5.png"} alt="" />
                 <div className='flex-none'>
+             
                   <div className='flex justify-between text-gray-800 text-sm font-serif'>
                     {item.name}
                     <div>
@@ -104,6 +107,7 @@ const ListPage = () => {
                   <Link to={`/detailPage`} state={{ item }} className='border border-current px-3 py-2 my-2 rounded-md text-sm ml-2'>View</Link>
                 </div>
               </div>
+              
             ))
           ) : (
             <p>no item found for this category</p>

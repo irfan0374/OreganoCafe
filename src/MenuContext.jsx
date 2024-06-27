@@ -281,7 +281,7 @@ const removeFromFavorites=(item)=>{
       name: "LOTUS BISCOFF",
       category: "shake",
       image: ["https://res.cloudinary.com/dlcnf8yfh/image/upload/v1718277983/Lotus_biscoff_shake_djf0yc.jpg"],
-      price: 1110
+      price: 110
     },
     {
       id: 33,
@@ -591,7 +591,7 @@ const removeFromFavorites=(item)=>{
       oreganoSp:"yes",
       category: "combo",
       description:"2 Pc Chicken, 2 Bun 1 Garlic Paste, Fries",
-      image: ["https://res.cloudinary.com/dlcnf8yfh/image/upload/v1718708913/Untitled_design_8_vdewoz.png"],
+      image: ["https://res.cloudinary.com/dlcnf8yfh/image/upload/v1719464167/snack_box_ealulp.jpg"],
       price: 190
     },
     {
@@ -599,7 +599,7 @@ const removeFromFavorites=(item)=>{
       name: "DINNER MEAL",
       category: "combo",
       description:"3 Pc Chicken, 3 Bun, 1 Garlic Paste, Fries",
-      image: ["https://res.cloudinary.com/dlcnf8yfh/image/upload/v1718708913/Untitled_design_8_vdewoz.png"],
+      image: ["https://res.cloudinary.com/dlcnf8yfh/image/upload/v1719464167/dinner_meal_c9deor.jpg"],
       price: 300
     },
     {
@@ -607,7 +607,7 @@ const removeFromFavorites=(item)=>{
       name: "ROYAL BOX",
       category: "combo",
       description:"6 Pc Chicken, 5 Bun,1 Coleslow 1 Garlic Paste, Fries,750 ml Coke",
-      image: ["https://res.cloudinary.com/dlcnf8yfh/image/upload/v1718708913/Untitled_design_5_r3ee1k.png"],
+      image: ["https://res.cloudinary.com/dlcnf8yfh/image/upload/v1719464167/royal_box_eguxsg.jpg"],
       price: 700
     },
     {
@@ -616,14 +616,14 @@ const removeFromFavorites=(item)=>{
       category: "combo",
       description:"9 Pc Chicken, 6 Bun,2 Coleslow 2 Garlic Paste, Fries,750 ml Coke",
       price:950,
-      image: ["https://res.cloudinary.com/dlcnf8yfh/image/upload/v1718708913/Untitled_design_2_qhdj52.png","https://res.cloudinary.com/dlcnf8yfh/image/upload/v1718708913/Untitled_design_5_r3ee1k.png"]
+      image: ["https://res.cloudinary.com/dlcnf8yfh/image/upload/v1719464167/family_pack_hrlatf.jpg"]
     },
     {
       id: 74,
       name: "FAMILY SPECIAL",
       category: "combo",
       description:"12 Pc Chicken, 6 Bun,3 Coleslow, 3 Garlic Paste, Fries, 1.50 ltr Coke",
-      image: ["https://res.cloudinary.com/dlcnf8yfh/image/upload/v1718708913/Untitled_design_2_qhdj52.png"],
+      image: ["https://res.cloudinary.com/dlcnf8yfh/image/upload/v1719464167/fam_spcl_ckyyjm.jpg"],
       price: 1150
     },
     {
@@ -632,7 +632,7 @@ const removeFromFavorites=(item)=>{
       oreganoSp:"yes",
       category: "combo",
       description:"15 Pc Chicken, 12 Bun,3 Coleslow, 4 Garlic Paste, Fries,2.25 ltr Coke",
-      image: ["https://res.cloudinary.com/dlcnf8yfh/image/upload/v1718709858/Untitled_design_10_a0qeou.png"],
+      image: ["https://res.cloudinary.com/dlcnf8yfh/image/upload/v1719464167/jumbo_pack_vizdrw.jpg"],
       price: 1300
     },
     {
@@ -640,7 +640,7 @@ const removeFromFavorites=(item)=>{
       name: "KING JUMBO",
       category: "combo",
       description:"20 Pc Chicken, 15 Bun,4 Coleslow, 5 Garlic Paste, Fries,2.25 ltr Coke",
-      image: ["https://res.cloudinary.com/dlcnf8yfh/image/upload/v1718709858/Untitled_design_10_a0qeou.png"],
+      image: ["https://res.cloudinary.com/dlcnf8yfh/image/upload/v1719464167/king_jumbo_xcwhbo.jpg"],
       price: 1800
     },
     {

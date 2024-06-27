@@ -22,8 +22,6 @@ const Footer = () => {
       </nav>
       
     </footer>
-    <div className='pl-3 bg-green text-gray-400'>Main road payangadi 
-    8139093366</div>
     </>
   )
 }

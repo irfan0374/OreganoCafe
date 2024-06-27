@@ -11,7 +11,25 @@ import Navbar2 from '../Components/Navbar2'
 const juiceShakeList = () => {
   const [type,setType]=useState("")
   const { category } = useParams()
-  const { menu } = useContext(MenuContext)
+  const { menu, favorites, addToFavorites, removeFromFavorites } = useContext(MenuContext);
+  const [localFavorites, setLocalFavorites] = useState([]);
+
+  // Update localFavorites when favorites change
+  useEffect(() => {
+    setLocalFavorites(favorites);
+  }, [favorites]);
+
+  const handleFavorites = (item) => {
+    if (isFavorite(item)) {
+      removeFromFavorites(item);
+    } else {
+      addToFavorites(item);
+    }
+  };
+
+  const isFavorite = (item) => {
+    return localFavorites.some((fav) => fav.id === item.id);
+  };
 
   const filterMenu=useMemo(()=>{
     const filterobj = menu.filter(item =>{
@@ -55,24 +73,60 @@ const juiceShakeList = () => {
           </ul>
         </div>
         {/* category option end*/}
-        <h1 className='my-3'>{category.charAt(0).toUpperCase() + category.slice(1)} Menu</h1>
+        <h1 className='my-3'>{type.charAt(0).toUpperCase() + type.slice(1)} Menu</h1>
 
         <div className='grid grid-cols-2 gap-3 '>
           {filterMenu.length > 0 ? (
             filterMenu.map(item => (
-              <div className=' h-60  '>
+              <div className=' h-full  '>
                 <img className="w-full h-40 object-cover rounded-md" src={item.image[0]} alt="" />
                 <div className='flex justify-between'>
 
                   <div className=' py-1 text-gray-800 text-sm font-bold font-serif '>
                     {item.name}
                   </div>
+                 
                   <div className=" py-1 text-black text-end text-sm">
                     ₹{item.price}</div>
                 </div>
-                <p className='text-sm truncate font-thin'>
-                  {item.description}
-                </p>
+                <div>
+                      <label className="ui-bookmark">
+                      <input
+                          type="checkbox"
+                          checked={isFavorite(item)}
+                          onChange={() => handleFavorites(item)}
+                        />
+                        <div className="bookmark">
+                          <svg
+                            viewBox="0 0 16 16"
+                            style={{ marginTop: '4px', display: isFavorite(item) ? 'block' : 'none' }}
+                            className="bi bi-heart-fill"
+                            height="25"
+                            width="25"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"
+                              fillRule="evenodd"
+                            ></path>
+                          </svg>
+                          <svg
+                            viewBox="0 0 16 16"
+                            style={{ marginTop: '4px', display: isFavorite(item) ? 'none' : 'block' }}
+                            className="bi bi-heart"
+                            height="25"
+                            width="25"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314Z"
+                            ></path>
+                          </svg>
+                        </div>
+                      </label>
+                    </div>
+              
                 <div className='my-2'>
                   <Link to={`/detailPage`} state={{ item }} className='border border-current px-3 py-2 my-2 rounded-md text-sm ml-2'>View</Link>
                 </div>

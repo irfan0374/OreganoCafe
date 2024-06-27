@@ -7,7 +7,7 @@ import Navbar2 from '../Components/Navbar2';
 
 
 const WishlistPage = () => {
-    const { favorites,setFavorites, removeFromFavorites } = useContext(MenuContext);
+    const { favorites, setFavorites, removeFromFavorites } = useContext(MenuContext);
     const [favorite, setFav] = useState([]);
 
     useEffect(() => {
@@ -26,7 +26,7 @@ const WishlistPage = () => {
             <Navbar2 />
             <div className="mx-auto p-4">
                 <div className="flex justify-between items-center mb-4">
-                    <h1 className="text-2xl font-bold"> Wishlist</h1>
+                    <h1 className="text-2xl font-bold"> </h1>
                     {favorites.length > 0 && (
                         <button
                             className="border border-black text-black px-4 py-2 rounded-full"
@@ -77,9 +77,19 @@ const WishlistPage = () => {
                     </div>
                 ) : (
                     <>
-                        <p className="text-center text-gray-700 font-bold">Your wishlist is empty.</p>
+
                         <div>
-                            <img className='animate-pulse' src={"https://res.cloudinary.com/dlcnf8yfh/image/upload/v1719287495/Firefly_acartoon_charectors_pick_burger_and_juice_to_trolly_87268-removebg-preview_eaapj8.png"} alt="" />
+                            <img className='animate-pulse w-72 h-72 ml-7 mt-12' src={"https://res.cloudinary.com/dlcnf8yfh/image/upload/v1719287495/Firefly_acartoon_charectors_pick_burger_and_juice_to_trolly_87268-removebg-preview_eaapj8.png"} alt="" />
+                        </div>
+                        <div className='mt-11'>
+
+                            <p className="text-center text-gray-700 font-bold">Your cart is empty</p>
+                            <p className="text-center text-black font-thin">You can go to home page to view more items</p>
+                            <Link to={'/'}>
+                                <button className='bg-green p-3 rounded-md text-white ml-24 font-thin mt-5'>
+                                    Go to home page
+                                </button>
+                            </Link>
                         </div>
                     </>
                 )}
